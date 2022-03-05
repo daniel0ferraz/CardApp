@@ -1,9 +1,17 @@
 import styled from 'styled-components/native';
+import {Dimensions} from 'react-native';
+
+const {height} = Dimensions.get('window');
+
+export const ScrollView = styled.ScrollView`
+  width: 100%;
+  height: 100%;
+`;
 
 export const Container = styled.View`
   flex: 1;
   width: 100%;
-  height: 100%;
+  height: ${height}px;
   padding: 16px;
   justify-content: space-between;
   align-items: center;
@@ -42,6 +50,7 @@ export const View = styled.View`
 export const Button = styled.TouchableOpacity`
   width: 100%;
   height: 55px;
+  margin-bottom: 20px;
   background-color: #6a189a;
   align-items: center;
   justify-content: center;

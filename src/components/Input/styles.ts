@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import {TextInputMask} from 'react-native-masked-text';
 
 export const Container = styled.View`
   width: ${({width}) => (width ? width : '100%')};
@@ -12,6 +13,12 @@ export const Container = styled.View`
 `;
 
 export const TextInput = styled.TextInput`
+  width: 100%;
+  margin-left: 8px;
+  font-weight: 500;
+`;
+
+export const MaskTextInput = styled(TextInputMask)`
   width: 100%;
   margin-left: 8px;
   font-weight: 500;
