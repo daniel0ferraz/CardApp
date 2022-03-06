@@ -1,5 +1,16 @@
-import React from 'react';
+import React, {ReactElement} from 'react';
 import * as Styled from './styles';
+
+interface propsInput {
+  width?: string;
+  icon: ReactElement | false;
+  placeholder: string;
+  mask?: boolean;
+  value: string;
+  type?: any;
+  options?: any;
+  onChangeText: (text: string) => void;
+}
 
 export default function Input({
   width,
@@ -10,7 +21,7 @@ export default function Input({
   type,
   options,
   onChangeText,
-}) {
+}: propsInput) {
   return (
     <Styled.Container width={width}>
       {icon && icon}

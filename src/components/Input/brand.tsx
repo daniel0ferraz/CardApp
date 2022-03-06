@@ -1,7 +1,7 @@
 import React from 'react';
 
 import IconElo from '../../assets/icon-elo.svg';
-import IconMaster from '../../assets/icon-mastercard.svg';
+import IconMaster from '../../assets/icon-mastercard2.svg';
 import IconVisa from '../../assets/icon-visa.svg';
 import IconHipercard from '../../assets/icon-hiper-card.svg';
 
