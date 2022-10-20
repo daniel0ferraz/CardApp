@@ -1,34 +1,23 @@
 import React from 'react';
+import { TextInputProps } from 'react-native';
 import * as Styled from './styles';
 
+
+type Props = TextInputProps & {
+  icon?: any,
+}
+
 export default function Input({
-  width,
   icon,
-  placeholder,
-  mask,
-  value,
-  type,
-  options,
-  onChangeText,
-}) {
+  ...rest
+}: Props) {
   return (
-    <Styled.Container width={width}>
+    <Styled.Container>
       {icon && icon}
-      {mask ? (
-        <Styled.MaskTextInput
-          value={value}
-          type={type}
-          options={options}
-          onChangeText={text => onChangeText(text)}
-          placeholder={placeholder}
-        />
-      ) : (
-        <Styled.TextInput
-          value={value}
-          onChangeText={text => onChangeText(text)}
-          placeholder={placeholder}
-        />
-      )}
+
+      <Styled.Input
+        {...rest}
+      />
     </Styled.Container>
   );
 }

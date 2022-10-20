@@ -7,8 +7,8 @@ import RegisterExtract from './screens/RegisterExtract';
 export default function App() {
   return (
     <ThemeProvider theme={theme}>
-      {/* <Home /> */}
-      <RegisterExtract />
+      <Home />
+      {/* <RegisterExtract /> */}
     </ThemeProvider>
   );
 }

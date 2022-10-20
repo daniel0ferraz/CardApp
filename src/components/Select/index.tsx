@@ -30,7 +30,7 @@ export default function Select({ options, onChangeSelect, text }: Props) {
           { backgroundColor: item.id === selected ? '#eee' : '#fff' },
         ]}
         onPress={() => {
-          // onChangeSelect(item.id);
+
           !!onChangeSelect && onChangeSelect(item.id, item.name);
           setTxt(item.name);
           setModalVisible(false);
@@ -38,7 +38,10 @@ export default function Select({ options, onChangeSelect, text }: Props) {
         }}>
         <Text style={styles.optionTxt}>{item.name}</Text>
         {item.id === selected && (
+
           <Check width={20} height={20} />
+
+
 
         )}
       </TouchableOpacity>
@@ -60,10 +63,7 @@ export default function Select({ options, onChangeSelect, text }: Props) {
         <SafeAreaView>
           <View style={styles.headerModal}>
             <TouchableOpacity onPress={() => setModalVisible(false)}>
-              {/* <SvgUri
-                width={19}
-                source={require('../../assets/icon-arrow.svg')}
-              /> */}
+              <Check width={20} height={20} />
             </TouchableOpacity>
             <Text style={styles.modalTitle}>{text}</Text>
             <TouchableOpacity onPress={() => setModalVisible(false)}>
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 60,
     backgroundColor: '#bdbdbd50',
-    paddingHorizontal: 12,
+    // // paddingHorizontal: 12,
     // marginHorizontal: 1,
     borderRadius: 8,
     fontSize: 18,
@@ -97,8 +97,8 @@ const styles = StyleSheet.create({
   txt: {
     marginLeft: 8,
     // fontSize: 16,
-    color: '#2c2c2c',
     fontWeight: '500',
+    olor: '#2c2c2c',
   },
   headerModal: {
     flexDirection: 'row',
@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
   },
   modalTitle: {
     fontSize: 18,
-    color: '#000000',
+    // color: '#000000',
   },
   modalCancel: {
     fontSize: 14,

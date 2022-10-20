@@ -51,8 +51,8 @@ export default function Home() {
   }
 
   useEffect(() => {
-    listTransactionsCards();
-    lastMovimentations();
+    // listTransactionsCards();
+    // lastMovimentations();
   }, [])
   return (
 
@@ -63,7 +63,7 @@ export default function Home() {
       </Styled.Header>
 
       <Styled.BoxCards>
-        <CardSlider data={dataCard ? dataCard : cardsMock} />
+        <CardSlider data={cardsMock} />
       </Styled.BoxCards>
 
       <Styled.Content>
@@ -75,7 +75,7 @@ export default function Home() {
         </Styled.BoxNewExtract>
 
         <Styled.View>
-          <ListHistorico data={dataTransactions ? dataTransactions : dataTransactionsMock} />
+          <ListHistorico data={dataTransactionsMock} />
         </Styled.View>
 
       </Styled.Content>

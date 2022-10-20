@@ -5,7 +5,6 @@ export const Container = styled.View`
     flex: 1;
     width: 100%;
 
-    /* justify-content: space-between; */
     /* align-items: center; */
     background: ${theme.colors.light};
   `}
@@ -31,7 +30,7 @@ export const Subtitle = styled.Text`
 `;
 
 export const Content = styled.View`
-  flex: 1;
+  /* flex: 1; */
   width: 100%;
   padding: 15px;
   border-top-left-radius: 20px;
@@ -40,12 +39,10 @@ export const Content = styled.View`
   align-items: center;
 `;
 
-export const View = styled.View`
-  /* flex: 1; */
-  /* width: 100%; */
+export const RowItens = styled.View`
   flex-direction: row;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 `;
 
 export const Space = styled.View`
@@ -54,5 +51,17 @@ export const Space = styled.View`
 `;
 
 export const Button = styled.TouchableOpacity`
+  margin-top: 30px;
   width: 100%;
+  height: 40px;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+  background-color: #262626;
+`;
+
+export const TitleBtn = styled.Text`
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
 `;
