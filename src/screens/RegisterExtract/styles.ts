@@ -1,13 +1,9 @@
 import styled, {css} from 'styled-components/native';
-import {Dimensions} from 'react-native';
-
-const {height} = Dimensions.get('window');
 
 export const Container = styled.View`
   ${({theme}) => css`
     flex: 1;
     width: 100%;
-    height: ${height}px;
 
     /* justify-content: space-between; */
     /* align-items: center; */
@@ -34,10 +30,6 @@ export const Subtitle = styled.Text`
   color: #2c2c2c;
 `;
 
-export const BoxCards = styled.View`
-  padding-bottom: 15px;
-`;
-
 export const Content = styled.View`
   flex: 1;
   width: 100%;
@@ -48,31 +40,19 @@ export const Content = styled.View`
   align-items: center;
 `;
 
-export const BoxNewExtract = styled.View`
-  width: 100%;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 24px;
-`;
-
-export const TitleExtract = styled.Text`
-  ${({theme}) => css`
-    font-weight: 700;
-    font-size: 20px;
-    color: ${theme.colors.gray};
-  `}
-`;
-
-export const NewExtract = styled.TouchableOpacity`
-  width: 50px;
-  height: 50px;
-  border-radius: 20px;
-  align-items: center;
-  justify-content: center;
-`;
-
 export const View = styled.View`
-  flex: 1;
+  /* flex: 1; */
+  /* width: 100%; */
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const Space = styled.View`
+  margin-top: 10px;
+  width: 100%;
+`;
+
+export const Button = styled.TouchableOpacity`
   width: 100%;
 `;

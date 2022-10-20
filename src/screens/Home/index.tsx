@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import Card from '../../components/Card';
+import React, { useEffect, useState } from 'react';
+
 import Input from '../../components/Input';
 
 import IconUser from '../../assets/icon-user.svg';
@@ -8,81 +8,78 @@ import IconDate from '../../assets/icon-date.svg';
 import IconNumber from '../../assets/icon-number.svg';
 
 import * as Styled from './styles';
-import {getBrand} from '../../components/Input/brand';
+import { getBrand } from '../../components/Input/brand';
+import { Card } from '../../@types/Card';
+import { TransactionsCard } from '../../@types/TransactionsCard';
+import { api } from '../../services/api';
+import { cardsMock, dataTransactionsMock } from "./data"
+import CardSlider from '../../components/CardSlider';
+import ListHistorico from '../../components/ListHistorico';
+
+import Adicionar from '../../assets/icons/plus.svg';
 
 export default function Home() {
-  const [icon, setIcon] = useState({icon: false});
-  const [data, setData] = useState({
-    name: '',
-    number: '',
-    validate: '',
-    cvv: '',
-  });
+  const [dataCard, setDataCard] = useState<Card[]>([]);
+  const [dataTransactions, setDataTransactions] = useState<TransactionsCard[]>([]);
+
+  // Lista transações de cartoes
+  const listTransactionsCards = async () => {
+    try {
+      const response = await api.get('/cards');
+      setDataCard(response.data)
+    } catch (error: any) {
+      console.log('error', error.message);
+    };
+  }
+
+  // SomarValores
+  const sum = dataCard.reduce((sum, item: Card) => sum + item.credito, 0);
+
+  // Lista movimentações
+  const lastMovimentations = async () => {
+    try {
+      const response = await api.get('/transactionsCards');
+      if (!response.data) {
+        return [];
+      } else {
+        setDataTransactions(response.data)
+        return response.data;
+      }
+    } catch (error: any) {
+      console.log('error', error.message);
+    }
+  }
+
+  useEffect(() => {
+    listTransactionsCards();
+    lastMovimentations();
+  }, [])
   return (
-    <Styled.ScrollView>
-      <Styled.Container>
-        <Styled.Header>
-          <Styled.Title>Meu Cartão</Styled.Title>
-          <Styled.Subtitle>Insira os dados do cartão</Styled.Subtitle>
-        </Styled.Header>
-        <Styled.Content>
-          <Card data={data} icon={icon?.icon} />
-          <Input
-            placeholder="Nome do titular"
-            value={data.name}
-            onChangeText={text => {
-              setData({...data, name: text});
-            }}
-            icon={<IconUser fill="#6a189a" width={16} height={16} />}
-          />
-          <Input
-            placeholder="Número do cartão"
-            value={data.number}
-            type="credit-card"
-            mask
-            onChangeText={(text: string) => {
-              setData({...data, number: text});
-              setIcon(getBrand(text));
-            }}
-            icon={<IconNumber fill="#6a189a" width={16} height={16} />}
-          />
 
-          <Styled.View>
-            <Input
-              placeholder="Validade"
-              value={data.validate}
-              type="custom"
-              options={{
-                mask: '99/99',
-              }}
-              mask
-              onChangeText={text => {
-                setData({...data, validate: text});
-              }}
-              icon={<IconDate fill="#6a189a" width={16} height={16} />}
-              width="45%"
-            />
-            <Input
-              placeholder="CVV"
-              value={data.cvv}
-              type="custom"
-              options={{
-                mask: '9999',
-              }}
-              mask
-              onChangeText={text => {
-                setData({...data, cvv: text});
-              }}
-              icon={<IconCode fill="#6a189a" width={16} height={16} />}
-              width="45%"
-            />
-          </Styled.View>
-        </Styled.Content>
+    <Styled.Container>
+      <Styled.Header>
+        <Styled.Title>Meus Cartões</Styled.Title>
+        <Styled.Subtitle>{dataCard.length} ativos.</Styled.Subtitle>
+      </Styled.Header>
 
-        <Styled.Button>
-          <Styled.TextButton>Cadastrar</Styled.TextButton>
-        </Styled.Button>
-      </Styled.Container>
-    </Styled.ScrollView>
+      <Styled.BoxCards>
+        <CardSlider data={dataCard ? dataCard : cardsMock} />
+      </Styled.BoxCards>
+
+      <Styled.Content>
+        <Styled.BoxNewExtract>
+          <Styled.TitleExtract>Movimentações</Styled.TitleExtract>
+          <Styled.NewExtract>
+            <Adicionar />
+          </Styled.NewExtract>
+        </Styled.BoxNewExtract>
+
+        <Styled.View>
+          <ListHistorico data={dataTransactions ? dataTransactions : dataTransactionsMock} />
+        </Styled.View>
+
+      </Styled.Content>
+    </Styled.Container>
+
   );
 }

@@ -16,6 +16,7 @@ export const TextInput = styled.TextInput`
   width: 100%;
   margin-left: 8px;
   font-weight: 500;
+  color: #2c2c2c;
 `;
 
 export const MaskTextInput = styled(TextInputMask)`

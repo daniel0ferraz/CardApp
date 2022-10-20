@@ -1,8 +1,14 @@
 import React from 'react';
-
-import { View } from 'react-native';
+import { ThemeProvider } from 'styled-components';
+import theme from './styles/theme';
 import Home from './screens/Home';
+import RegisterExtract from './screens/RegisterExtract';
 
 export default function App() {
-  return <Home />;
+  return (
+    <ThemeProvider theme={theme}>
+      {/* <Home /> */}
+      <RegisterExtract />
+    </ThemeProvider>
+  );
 }
