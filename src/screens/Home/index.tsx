@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 import Input from '../../components/Input';
 
@@ -17,8 +17,12 @@ import CardSlider from '../../components/CardSlider';
 import ListHistorico from '../../components/ListHistorico';
 
 import Adicionar from '../../assets/icons/plus.svg';
+import { useFocusEffect, useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 export default function Home() {
+  const navigation = useNavigation<NativeStackNavigationProp<any>>();
+
   const [dataCard, setDataCard] = useState<Card[]>([]);
   const [dataTransactions, setDataTransactions] = useState<TransactionsCard[]>([]);
 
@@ -50,10 +54,13 @@ export default function Home() {
     }
   }
 
-  useEffect(() => {
-    // listTransactionsCards();
-    // lastMovimentations();
-  }, [])
+
+  useFocusEffect(
+    useCallback(() => {
+      listTransactionsCards();
+      lastMovimentations();
+    }, [])
+  );
   return (
 
     <Styled.Container>
@@ -63,19 +70,19 @@ export default function Home() {
       </Styled.Header>
 
       <Styled.BoxCards>
-        <CardSlider data={cardsMock} />
+        <CardSlider data={dataCard} />
       </Styled.BoxCards>
 
       <Styled.Content>
         <Styled.BoxNewExtract>
           <Styled.TitleExtract>Movimentações</Styled.TitleExtract>
-          <Styled.NewExtract>
+          <Styled.NewExtract onPress={() => navigation.navigate('RegisterExtract')}>
             <Adicionar />
           </Styled.NewExtract>
         </Styled.BoxNewExtract>
 
         <Styled.View>
-          <ListHistorico data={dataTransactionsMock} />
+          <ListHistorico data={dataTransactions} />
         </Styled.View>
 
       </Styled.Content>

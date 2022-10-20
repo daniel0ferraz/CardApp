@@ -101,6 +101,25 @@ export const selectMock = [
   },
 ];
 
+export const selectCategoryMock = [
+  {
+    id: 1,
+    name: 'Alimentação',
+  },
+  {
+    id: 2,
+    name: 'Bebidas',
+  },
+  {
+    id: 3,
+    name: 'Saúde',
+  },
+  {
+    id: 4,
+    name: 'Viagens',
+  },
+];
+
 export const dataTransactionsMock = [
   {
     id: 1,
@@ -115,7 +134,7 @@ export const dataTransactionsMock = [
     name: 'Supermecado Gabriele',
     category: 'Mercado',
     value: 47.5,
-    date: '',
+    date: '15/10/2022',
     card_id: 3,
   },
   {
@@ -123,7 +142,7 @@ export const dataTransactionsMock = [
     name: 'Restaurante Vovó Bela',
     category: 'Alimentação',
     value: 47.5,
-    date: '',
+    date: '21/05/2022',
     card_id: 4,
   },
   {
@@ -176,7 +195,7 @@ export const dataTransactionsMock = [
   },
   {
     name: 'Hotel Chauan',
-    category: '',
+    category: 'Viagens',
     value: '260.89',
     date: '23/08/2021',
     card_id: 1,

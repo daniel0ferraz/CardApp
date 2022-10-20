@@ -2,9 +2,9 @@ import styled, {css} from 'styled-components/native';
 
 export const Container = styled.View`
   ${({theme}) => css`
-    flex: 1;
+    /* flex: 1; */
     width: 100%;
-
+    /* padding: 15px; */
     /* align-items: center; */
     background: ${theme.colors.light};
   `}
@@ -30,19 +30,25 @@ export const Subtitle = styled.Text`
 `;
 
 export const Content = styled.View`
-  /* flex: 1; */
   width: 100%;
   padding: 15px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
+
   background-color: #ffffff;
-  align-items: center;
+`;
+
+export const ButtonsContainer = styled.View`
+  flex-direction: row;
+  justify-content: flex-start;
+  padding-bottom: 20px;
 `;
 
 export const RowItens = styled.View`
+  width: 100%;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  /* align-items: center; */
 `;
 
 export const Space = styled.View`
@@ -51,17 +57,19 @@ export const Space = styled.View`
 `;
 
 export const Button = styled.TouchableOpacity`
-  margin-top: 30px;
-  width: 100%;
-  height: 40px;
-  border-radius: 8px;
-  align-items: center;
-  justify-content: center;
-  background-color: #262626;
+  ${({theme}) => css`
+    margin-top: 30px;
+    width: 100%;
+    height: 60px;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    background-color: ${theme.colors.gray};
+  `}
 `;
 
 export const TitleBtn = styled.Text`
   font-size: 15px;
-  font-weight: 700;
-  color: #ffffff;
+  font-weight: 500;
+  color: #dddddd;
 `;

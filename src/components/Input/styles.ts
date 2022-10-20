@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 import {TextInput} from 'react-native';
 
 export const Container = styled.View`
-  /* width: 100%; */
+  width: 100%;
   height: 60px;
   margin-top: 14px;
   padding: 8px;
@@ -17,4 +17,5 @@ export const Input = styled.TextInput`
   margin-left: 8px;
   font-weight: 500;
   color: #2c2c2c;
+  font-size: 16px;
 `;

@@ -80,84 +80,52 @@
   ],
   "transactionsCards": [
     {
-      "id": 1,
-      "name": "Mercado Oliveira ",
-      "category": "Mercado",
-      "value": 47.5,
-      "date": "",
-      "card_id": 1
-    },
-    {
-      "id": 2,
-      "name": "Supermecado Gabriele",
-      "category": "Mercado",
-      "value": 47.5,
-      "date": "",
-      "card_id": 3
-    },
-    {
-      "id": 3,
-      "name": "Restaurante Vovó Bela",
-      "category": "Alimentação",
-      "value": 47.5,
-      "date": "",
-      "card_id": 4
-    },
-    {
-      "id": 4,
-      "name": "Jô Fashion",
-      "category": "Roupas",
-      "value": 47.5,
-      "date": "16/10/2022",
-      "card_id": 6
-    },
-    {
-      "id": 5,
-      "name": "Mercearia El Shaday",
-      "category": "Roupas",
-      "value": 47.5,
-      "date": "17/10/2022",
-      "card_id": 6
-    },
-    {
-      "id": 6,
-      "name": "Farmacia Santa Maria",
-      "category": "Saúde",
-      "value": 28,
-      "date": "17/10/2022",
-      "card_id": 6
-    },
-    {
-      "id": 7,
-      "name": "Cervejas",
-      "category": "Bar",
-      "value": 47.5,
-      "date": "17/10/2022",
-      "card_id": 6
-    },
-    {
-      "id": 8,
-      "name": "Cervejas",
+      "name": "Bar da lia",
       "category": "Bebidas",
-      "value": 47.5,
-      "date": "17/10/2022",
-      "card_id": 6
-    },
-    {
-      "name": "Hotel",
-      "category": "",
-      "value": "260.89",
-      "date": "01/02/2022",
-      "card_id": 5,
-      "id": 9
-    },
-    {
-      "name": "Hotel Chauan",
-      "category": "",
-      "value": "260.89",
-      "date": "23/08/2021",
+      "value": "20.40",
+      "date": "10/02/2022",
       "card_id": 1,
-      "id": 10
+      "id": 1
+    },
+    {
+      "name": "Supermercado Gabriele",
+      "category": "Alimentação",
+      "value": "200.0",
+      "date": "11/10/2022",
+      "card_id": 2,
+      "id": 2
+    },
+    {
+      "name": "Farmácia ",
+      "category": "Saúde",
+      "value": "20.85",
+      "date": "10/12/2022",
+      "card_id": 2,
+      "id": 3
+    },
+    {
+      "name": "Teste",
+      "category": "Viagens",
+      "value": "200.50",
+      "date": "01/02/2022",
+      "card_id": 4,
+      "id": 4
+    },
+    {
+      "name": "Bebida",
+      "category": "Bebidas",
+      "value": "20.54",
+      "date": "20/02/2022",
+      "card_id": 1,
+      "id": 5
+    },
+    {
+      "name": "Teste",
+      "category": "Bebidas",
+      "value": "20.96",
+      "date": "20/02/2022",
+      "card_id": 3,
+      "id": 6
     }
   ]
 }
