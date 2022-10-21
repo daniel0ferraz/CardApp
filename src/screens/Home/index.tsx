@@ -6,6 +6,7 @@ import IconUser from '../../assets/icon-user.svg';
 import IconCode from '../../assets/icon-code.svg';
 import IconDate from '../../assets/icon-date.svg';
 import IconNumber from '../../assets/icon-number.svg';
+import IconFilter from '../../assets/icons/filter.svg';
 
 import * as Styled from './styles';
 import { getBrand } from '../../components/Input/brand';
@@ -19,12 +20,21 @@ import ListHistorico from '../../components/ListHistorico';
 import Adicionar from '../../assets/icons/plus.svg';
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { TouchableOpacity, Text, View } from 'react-native';
 
 export default function Home() {
   const navigation = useNavigation<NativeStackNavigationProp<any>>();
 
   const [dataCard, setDataCard] = useState<Card[]>([]);
   const [dataTransactions, setDataTransactions] = useState<TransactionsCard[]>([]);
+
+  const [openFilter, setOpenFilter] = useState(false)
+  const [filter, setFilter] = useState({
+    category: '',
+    date: '',
+    card_id: ''
+  });
+
 
   // Lista transações de cartoes
   const listTransactionsCards = async () => {
@@ -38,7 +48,6 @@ export default function Home() {
 
   // SomarValores
   const sum = dataCard.reduce((sum, item: Card) => sum + item.credito, 0);
-
   // Lista movimentações
   const lastMovimentations = async () => {
     try {
@@ -54,13 +63,36 @@ export default function Home() {
     }
   }
 
+  const filterTransactions = async () => {
+    try {
+      const response = await api.get(`/transactionsCards?date=${filter.date}`);
+      if (!response.data) {
+        return [];
+      } else {
+        setDataTransactions(response.data)
+        return response.data;
+      }
+    } catch (error: any) {
+      console.log('error', error.message);
+    }
+  }
+
 
   useFocusEffect(
     useCallback(() => {
       listTransactionsCards();
-      lastMovimentations();
+      if (!filter) {
+        filterTransactions();
+      }
     }, [])
   );
+
+  useEffect(() => {
+    if (filterTransactions) {
+      filterTransactions();
+
+    }
+  }, [filter]);
   return (
 
     <Styled.Container>
@@ -76,10 +108,20 @@ export default function Home() {
       <Styled.Content>
         <Styled.BoxNewExtract>
           <Styled.TitleExtract>Movimentações</Styled.TitleExtract>
-          <Styled.NewExtract onPress={() => navigation.navigate('RegisterExtract')}>
-            <Adicionar />
+          <Styled.NewExtract onPress={() => setOpenFilter(!openFilter)}>
+            <IconFilter />
           </Styled.NewExtract>
         </Styled.BoxNewExtract>
+
+        {openFilter && (
+          <>
+            <View>
+              <TouchableOpacity
+                onPress={() => setFilter({ ...filter, category: '', date: '20/10/2022', card_id: '', })}>
+                <Text>Data</Text>
+              </TouchableOpacity>
+            </View></>
+        )}
 
         <Styled.View>
           <ListHistorico data={dataTransactions} />

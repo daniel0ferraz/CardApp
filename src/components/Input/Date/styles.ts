@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
 import {TextInput} from 'react-native';
+import {TextInputMask} from 'react-native-masked-text';
 
 export const Container = styled.View`
   width: 100%;
@@ -12,7 +13,7 @@ export const Container = styled.View`
   align-items: center;
 `;
 
-export const Input = styled(TextInput)`
+export const Input = styled(TextInputMask)`
   width: 100%;
   margin-left: 8px;
   font-weight: 500;

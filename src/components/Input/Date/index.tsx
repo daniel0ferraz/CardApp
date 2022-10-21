@@ -1,12 +1,12 @@
-import React from 'react';
-import { TextInputProps } from 'react-native';
+import React from 'react'
+import { TextInputMaskProps } from 'react-native-masked-text';
 import * as Styled from './styles';
 
-type Props = TextInputProps & {
+type Props = TextInputMaskProps & {
   icon?: any,
 }
 
-export default function Input({
+export default function Date({
   icon,
   ...rest
 }: Props) {

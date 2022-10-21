@@ -17,6 +17,7 @@ import IconGoback from '../../assets/icons/long-arrowleft.svg'
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { api } from '../../services/api';
+import Date from '../../components/Input/Date';
 
 export default function RegisterExtract() {
 
@@ -90,6 +91,20 @@ export default function RegisterExtract() {
           autoCapitalize='none'
         />
 
+
+        <Input
+
+          placeholder='Valor da compra'
+          value={extract.value}
+          onChangeText={text => {
+            setExtract({ ...extract, value: text });
+          }}
+          icon={<Money width={25} height={25} />}
+          keyboardType='numeric'
+          autoCapitalize='none'
+        />
+
+
         <Styled.Space>
           <Select
             text='Cartão'
@@ -115,26 +130,19 @@ export default function RegisterExtract() {
 
 
 
-        <Input
-          placeholder="Digite o valor da compra"
-          value={extract.value}
-          onChangeText={(text) => {
-            setExtract({ ...extract, value: text });
-          }}
-          icon={<Money width={25} height={25} />}
-          keyboardType='numeric'
-        />
+        <Date
+          placeholder='Data'
+          type={'datetime'}
+          options={{
+            format: 'DD/MM/YYYY',
 
-        <Input
-          placeholder="Data de compra"
+          }}
+          value={extract.date}
           onChangeText={text => {
             setExtract({ ...extract, date: text });
           }}
           icon={<Calendario width={30} height={30} />}
         />
-
-
-
 
 
         <Styled.Button onPress={registerExtract}>

@@ -126,6 +126,22 @@
       "date": "20/02/2022",
       "card_id": 3,
       "id": 6
+    },
+    {
+      "name": "Lanchonete ",
+      "category": "Alimentação",
+      "value": "R$18,00",
+      "date": "20/10/2022",
+      "card_id": 1,
+      "id": 7
+    },
+    {
+      "name": "Aurora",
+      "category": "Saúde",
+      "value": "2000",
+      "date": "20/10/2022",
+      "card_id": 0,
+      "id": 8
     }
   ]
 }
