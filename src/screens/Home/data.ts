@@ -101,7 +101,7 @@ export const selectMock = [
   },
 ];
 
-export const selectCategoryMock = [
+export const CategoryMock = [
   {
     id: 1,
     name: 'Alimentação',
@@ -112,11 +112,23 @@ export const selectCategoryMock = [
   },
   {
     id: 3,
-    name: 'Saúde',
+    name: 'Estética',
   },
   {
     id: 4,
+    name: 'Saúde',
+  },
+  {
+    id: 5,
     name: 'Viagens',
+  },
+  {
+    id: 6,
+    name: 'Roupas',
+  },
+  {
+    id: 7,
+    name: 'Supermecado',
   },
 ];
 
@@ -188,7 +200,7 @@ export const dataTransactionsMock = [
   {
     name: 'Hotel',
     category: '',
-    value: '260.89',
+    value: 260.89,
     date: '01/02/2022',
     card_id: 5,
     id: 9,
@@ -196,7 +208,7 @@ export const dataTransactionsMock = [
   {
     name: 'Hotel Chauan',
     category: 'Viagens',
-    value: '260.89',
+    value: 260.89,
     date: '23/08/2021',
     card_id: 1,
     id: 10,

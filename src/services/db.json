@@ -80,68 +80,108 @@
   ],
   "transactionsCards": [
     {
-      "name": "Bar da lia",
-      "category": "Bebidas",
-      "value": "20.40",
-      "date": "10/02/2022",
-      "card_id": 1,
+      "name": "Teste",
+      "category": "Alimentação",
+      "value": "20.00",
+      "date": "22/10/2022",
+      "card_id": 3,
       "id": 1
     },
     {
-      "name": "Supermercado Gabriele",
-      "category": "Alimentação",
-      "value": "200.0",
-      "date": "11/10/2022",
-      "card_id": 2,
+      "name": "Teste 2",
+      "category": "Bebidas",
+      "value": "100.50",
+      "date": "22/10/2022",
+      "card_id": 1,
       "id": 2
     },
     {
-      "name": "Farmácia ",
+      "name": "teste ",
       "category": "Saúde",
-      "value": "20.85",
-      "date": "10/12/2022",
-      "card_id": 2,
+      "value": "1000",
+      "date": "20/10/2022",
+      "card_id": 5,
       "id": 3
     },
     {
-      "name": "Teste",
-      "category": "Viagens",
-      "value": "200.50",
-      "date": "01/02/2022",
-      "card_id": 4,
+      "name": "Testeq",
+      "category": "Roupas",
+      "value": 0,
+      "date": "10/10/2022",
+      "card_id": 2,
       "id": 4
     },
     {
-      "name": "Bebida",
-      "category": "Bebidas",
-      "value": "20.54",
-      "date": "20/02/2022",
-      "card_id": 1,
+      "name": "Reste",
+      "category": "Supermecado",
+      "value": 0,
+      "date": "21/10/2022",
+      "card_id": 5,
       "id": 5
     },
     {
-      "name": "Teste",
-      "category": "Bebidas",
-      "value": "20.96",
-      "date": "20/02/2022",
-      "card_id": 3,
+      "name": "teste",
+      "category": "Alimentação",
+      "value": 500,
+      "date": "10/10/2022",
+      "card_id": 1,
       "id": 6
     },
     {
-      "name": "Lanchonete ",
-      "category": "Alimentação",
-      "value": "R$18,00",
-      "date": "20/10/2022",
-      "card_id": 1,
+      "name": "teste",
+      "category": "Bebidas",
+      "value": 40,
+      "date": "07/10/2022",
+      "card_id": 3,
       "id": 7
     },
     {
-      "name": "Aurora",
-      "category": "Saúde",
-      "value": "2000",
-      "date": "20/10/2022",
-      "card_id": 0,
+      "name": "teste FFF",
+      "category": "Alimentação",
+      "value": "28.80",
+      "date": "01/10/2022",
+      "card_id": 2,
       "id": 8
+    },
+    {
+      "name": "afdfa",
+      "category": "Estética",
+      "value": 2000,
+      "date": "10/05/2022",
+      "card_id": 4,
+      "id": 9
+    },
+    {
+      "name": "DD",
+      "category": "Saúde",
+      "value": 252,
+      "date": "19/02/2022",
+      "card_id": 5,
+      "id": 10
+    },
+    {
+      "name": "Daniel ",
+      "category": "Viagens",
+      "value": 200,
+      "date": "05/05/2022",
+      "card_id": 4,
+      "id": 11
+    },
+    {
+      "name": "teste",
+      "category": "Saúde",
+      "value": "20",
+      "date": "22/10/2022",
+      "card_id": 4,
+      "id": 12
+    },
+    {
+      "name": "teste",
+      "category": "Viagens",
+      "value": "2069.00",
+      "date": "20/10/2022",
+      "card_id": 5,
+      "id": 13
     }
   ]
 }

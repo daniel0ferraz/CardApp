@@ -1,5 +1,6 @@
 import styled, {css} from 'styled-components/native';
 import {Dimensions} from 'react-native';
+import {ms} from 'react-native-size-matters';
 
 const {height} = Dimensions.get('window');
 

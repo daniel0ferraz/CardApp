@@ -1,0 +1,171 @@
+{
+  "cards": [
+    {
+      "id": 1,
+      "name": "Nubank",
+      "brand": "Mastercard",
+      "limitCredit": 400,
+      "credito": 114.65,
+      "debit": 0,
+      "color": "#530082",
+      "datePayment": "14/11/2022",
+      "namePropiety": "Daniel Ferraz Coelho"
+    },
+    {
+      "id": 2,
+      "name": "Nubank",
+      "brand": "Mastercard",
+      "limitCredit": 400,
+      "credito": 307.64,
+      "debit": 0,
+      "color": "#530082",
+      "datePayment": "14/11/2022",
+      "namePropiety": "Maria Tereza Gomes Rodrigues"
+    },
+    {
+      "id": 3,
+      "name": "PicPay",
+      "brand": "Mastercard",
+      "limitCredit": 700,
+      "credito": 35.16,
+      "debit": 0,
+      "color": "#202024",
+      "datePayment": "25/11/2022",
+      "namePropiety": "Daniel Ferraz Coelho"
+    },
+    {
+      "id": 4,
+      "name": "Next",
+      "brand": "Visa",
+      "limitCredit": 1900,
+      "credito": 136.31,
+      "debit": 0,
+      "color": "#00ff5f",
+      "datePayment": "14/11/2022",
+      "namePropiety": "Daniel Ferraz Coelho"
+    },
+    {
+      "id": 5,
+      "name": "Iti",
+      "brand": "Visa",
+      "limitCredit": 1300,
+      "credito": 64.16,
+      "debit": 0,
+      "color": "#FE3386",
+      "datePayment": "27/11/2022",
+      "namePropiety": "Daniel Ferraz Coelho"
+    },
+    {
+      "id": 6,
+      "name": "Iti",
+      "brand": "Visa",
+      "limitCredit": 50,
+      "credito": 32.12,
+      "debit": 0,
+      "color": "#FE3386",
+      "datePayment": "27/11/2022",
+      "namePropiety": "Maria Tereza Gomes Rodrigues"
+    },
+    {
+      "id": 7,
+      "name": "Neon",
+      "brand": "Visa",
+      "limitCredit": 500,
+      "credito": 56.51,
+      "debit": 0,
+      "color": "#0f92ff",
+      "datePayment": "14/11/2022",
+      "namePropiety": "Daniel Ferraz Coelho"
+    }
+  ],
+  "transactionsCards": [
+    {
+      "name": "Bar da lia",
+      "category": "Bebidas",
+      "value": "20.40",
+      "date": "10/02/2022",
+      "card_id": 1,
+      "id": 1
+    },
+    {
+      "name": "Supermercado Gabriele",
+      "category": "Alimentacao",
+      "value": "200.0",
+      "date": "11/10/2022",
+      "card_id": 2,
+      "id": 2
+    },
+    {
+      "name": "Farmácia ",
+      "category": "Saude",
+      "value": "20.85",
+      "date": "10/12/2022",
+      "card_id": 2,
+      "id": 3
+    },
+    {
+      "name": "Teste",
+      "category": "Viagens",
+      "value": "200.50",
+      "date": "01/02/2022",
+      "card_id": 4,
+      "id": 4
+    },
+    {
+      "name": "Bebida",
+      "category": "Bebidas",
+      "value": "20.54",
+      "date": "20/02/2022",
+      "card_id": 1,
+      "id": 5
+    },
+    {
+      "name": "Teste",
+      "category": "Bebidas",
+      "value": "20.96",
+      "date": "20/02/2022",
+      "card_id": 3,
+      "id": 6
+    },
+    {
+      "name": "Lanchonete ",
+      "category": "Alimentacao",
+      "value": "18,00",
+      "date": "20/10/2022",
+      "card_id": 1,
+      "id": 7
+    },
+    {
+      "name": "Aurora",
+      "category": "Saude",
+      "value": "2000",
+      "date": "20/10/2022",
+      "card_id": 0,
+      "id": 8
+    },
+    {
+      "name": "Fix Games",
+      "category": "Viagens",
+      "value": "200.00",
+      "date": "21/10/2022",
+      "card_id": 5,
+      "id": 9
+    },
+    {
+      "name": "Supermercado Gaé",
+      "category": "Bebidas",
+      "value": "10.40",
+      "date": "21/10/2022",
+      "card_id": 4,
+      "id": 10
+    },
+    {
+      "name": "Teste",
+      "category": "Bebidas",
+      "value": "2580.0",
+      "date": "20/10/2022",
+      "card_id": 3,
+      "id": 11
+    }
+  ]
+}

@@ -17,6 +17,8 @@ type Props = {
 
 export default function Historico({ data }: Props) {
 
+
+
   const iconBuy = (data: { category: string }) => {
     switch (data?.category) {
       case 'Mercado': {
@@ -49,6 +51,8 @@ export default function Historico({ data }: Props) {
 
     }
   }
+
+
   return (
     <>
       <Styled.ContentItens>
@@ -64,9 +68,12 @@ export default function Historico({ data }: Props) {
         </Styled.BoxInfo>
 
         <Styled.BoxText>
-          <Styled.Price>{formatToBRL(-data?.value) || 0}</Styled.Price>
+          <Styled.Price>{formatToBRL(-data?.value)}</Styled.Price>
           <Styled.Date>{data?.date}</Styled.Date>
         </Styled.BoxText>
+
+
+
       </Styled.ContentItens>
     </>
   );
