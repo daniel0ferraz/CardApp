@@ -7,8 +7,9 @@ export const BoxFilter = styled.View`
     align-items: center;
 
     background: ${theme.colors.white};
-    /* padding: 5px; */
+    padding: 5px;
     border-radius: 8px;
+    margin-bottom: 10px;
   `}
 `;
 
@@ -44,7 +45,7 @@ export const TitleBtnExtract = styled.Text`
 export const Category = styled.View`
   align-items: center;
   justify-content: space-between;
-  /* flex-direction: row; */
+  flex-direction: row;
   flex-wrap: wrap;
 `;
 
@@ -56,7 +57,7 @@ export const BoxCategory = styled.TouchableOpacity`
     height: 40px;
 
     border-radius: 8px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     padding: 2px;
   `}
 `;

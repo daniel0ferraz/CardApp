@@ -5,7 +5,7 @@ export const BoxFilter = styled.View`
   ${({theme}) => css`
     width: 100%;
     align-items: center;
-
+    flex-direction: column;
     background: ${theme.colors.white};
     padding: 5px;
     border-radius: 8px;
@@ -23,12 +23,12 @@ export const NewExtract = styled.TouchableOpacity`
   ${({theme}) => css`
     flex-direction: row;
     width: 120px;
-    height: 38px;
+    height: 48px;
     border-radius: 8px;
     align-items: center;
     justify-content: center;
     background-color: ${theme.colors.light};
-    margin-bottom: 36px;
+    margin-bottom: 15;
   `}
 `;
 

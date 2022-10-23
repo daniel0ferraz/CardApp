@@ -18,6 +18,7 @@ import { Category } from '../../@types/Filter';
 import moment from 'moment';
 import CategoriasFilter from '../../components/CategoriasFilter';
 import CardFilter from '../../components/CardFilter';
+import DateFilter from '../../components/DateFilter';
 
 
 
@@ -30,7 +31,7 @@ export default function Home() {
 
   // Filtros
   const [openFilter, setOpenFilter] = useState(false)
-  const [filtroCategoria, setFiltroCategoria] = useState<string | null>(null);
+  const [filterCategory, setFilterCategory] = useState<string | null>(null);
   const [filterCard, setFilterCard] = useState<number | null>(null);
 
   // Lista transações de cartoes
@@ -59,9 +60,9 @@ export default function Home() {
     }
   }
 
-  const testaFiltro = (name: string) => {
-    if (filtroCategoria !== null) {
-      return filtroCategoria === name;
+  const filtroCategoria = (name: string) => {
+    if (filterCategory !== null) {
+      return filterCategory === name;
     }
     return true;
   }
@@ -89,12 +90,12 @@ export default function Home() {
 
   useEffect(() => {
 
-    const filtraListaCartao = dataTransactionsMock.filter((item) => filtroCartao(item.card_id) && testaFiltro(item.category))
+    const filtraListaCartao = dataTransactionsMock.filter((item) => filtroCartao(item.card_id) && filtroCategoria(item.category))
     setDataTransactions(filtraListaCartao)
 
 
     setOpenFilter(false)
-  }, [filterCard, filtroCategoria])
+  }, [filterCard, filterCategory])
 
 
   return (
@@ -111,7 +112,7 @@ export default function Home() {
 
       <Styled.Content>
         <Styled.BoxNewExtract>
-          <Styled.TitleExtract>Movimentações</Styled.TitleExtract>
+          <Styled.TitleExtract> Movimentações</Styled.TitleExtract>
           <Styled.NewExtract onPress={() => setOpenFilter(!openFilter)}>
             <IconFilter width={20} />
             <Styled.TitleBtnExtract>Filtrar</Styled.TitleBtnExtract>
@@ -125,28 +126,29 @@ export default function Home() {
           {openFilter && (
             <>
               <View>
-
-                <CategoriasFilter
-                  filtroCategoria={filtroCategoria}
-                  setFiltroCategoria={setFiltroCategoria}
-                />
+                <DateFilter />
               </View>
-
-
               <View>
-
+                <CategoriasFilter
+                  filterCategory={filterCategory}
+                  setFilterCategory={setFilterCategory}
+                />
                 <CardFilter
                   filterCard={filterCard}
                   setFilterCard={setFilterCard}
                 />
               </View>
+              <View>
+              </View>
+
+
             </>
           )}
         </View>
 
 
         <Styled.View>
-          <ListHistorico data={dataTransactions} nameFilter={filtroCategoria} />
+          <ListHistorico data={dataTransactions} nameFilter={filterCategory} />
         </Styled.View>
 
       </Styled.Content>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { cardsFilter } from '../../screens/Home/data';
-import * as Styled from './styles'
+import * as Styled from '../CategoriasFilter/styles'
 import { useTheme } from 'styled-components';
 
 import Cartao from '../../assets/icons/card.svg';

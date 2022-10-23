@@ -1,29 +1,26 @@
 import React, { useState } from 'react';
-
-
 import { useTheme } from 'styled-components';
-
 import { CategoryMock } from "../../screens/Home/data"
 import Categorias from '../../assets/icons/categoria.svg'
 import * as Styled from './styles'
 
 type ICategorias = typeof CategoryMock[0]
 export type Props = {
-  filtroCategoria: string | null;
-  setFiltroCategoria: React.Dispatch<React.SetStateAction<string | null>>
+  filterCategory: string | null;
+  setFilterCategory: React.Dispatch<React.SetStateAction<string | null>>
 }
 
-export default function CategoriasFilter({ filtroCategoria, setFiltroCategoria }: Props) {
+export default function CategoriasFilter({ filterCategory, setFilterCategory }: Props) {
 
   const [open, setOpen] = useState(false);
 
   const colors = useTheme()
 
   const selectFilter = (opcao: ICategorias) => {
-    if (filtroCategoria === opcao.name) {
-      return setFiltroCategoria(null);
+    if (filterCategory === opcao.name) {
+      return setFilterCategory(null);
     }
-    return setFiltroCategoria(opcao.name);
+    return setFilterCategory(opcao.name);
   }
   return (
     <>
@@ -39,7 +36,7 @@ export default function CategoriasFilter({ filtroCategoria, setFiltroCategoria }
           <Styled.Category>
             {CategoryMock.map((opcao) => (
               <Styled.BoxCategory
-                style={{ backgroundColor: filtroCategoria === opcao.name ? '#3C3C3C' : colors.colors.red }}
+                style={{ backgroundColor: filterCategory === opcao.name ? '#3C3C3C' : colors.colors.red }}
                 key={opcao.id}
                 onPress={() => selectFilter(opcao)}
               >
