@@ -17,6 +17,7 @@ import { TouchableOpacity, Text, View } from 'react-native';
 import { Category } from '../../@types/Filter';
 import moment from 'moment';
 import CategoriasFilter from '../../components/CategoriasFilter';
+import CardFilter from '../../components/CardFilter';
 
 
 
@@ -30,6 +31,7 @@ export default function Home() {
   // Filtros
   const [openFilter, setOpenFilter] = useState(false)
   const [filtroCategoria, setFiltroCategoria] = useState<string | null>(null);
+  const [filterCard, setFilterCard] = useState<number | null>(null);
 
   // Lista transações de cartoes
   const listTransactionsCards = async () => {
@@ -45,19 +47,17 @@ export default function Home() {
   // Lista movimentações
   const lastMovimentations = async () => {
     try {
-      const response = await api.get("/transactionsCards");
-      if (!response.data) {
+      const response = await dataTransactionsMock;
+      if (!response) {
         return 'error';
       } else {
-        setDataTransactions(response.data)
-        return response.data;
+        setDataTransactions(response)
+        return response;
       }
     } catch (error: any) {
       console.log('error', error.message);
     }
   }
-
-  console.log('filtroCategoria', filtroCategoria)
 
   const testaFiltro = (name: string) => {
     if (filtroCategoria !== null) {
@@ -66,6 +66,15 @@ export default function Home() {
     return true;
   }
 
+
+  const filtroCartao = (id: number) => {
+    if (filterCard !== null) {
+      return filterCard === id;
+    }
+    return true;
+  }
+
+
   useFocusEffect(
     useCallback(() => {
       listTransactionsCards();
@@ -73,12 +82,20 @@ export default function Home() {
     }, [])
   );
 
-  useEffect(() => {
-    const novaLista = dataTransactions.filter(item => testaFiltro(item.category))
+  // useEffect(() => {
+  //   listTransactionsCards();
+  //   lastMovimentations();
+  // }, [])
 
-    setDataTransactions(novaLista)
+  useEffect(() => {
+
+    const filtraListaCartao = dataTransactionsMock.filter((item) => filtroCartao(item.card_id) && testaFiltro(item.category))
+    setDataTransactions(filtraListaCartao)
+
+
     setOpenFilter(false)
-  }, [filtroCategoria])
+  }, [filterCard, filtroCategoria])
+
 
   return (
 
@@ -96,22 +113,37 @@ export default function Home() {
         <Styled.BoxNewExtract>
           <Styled.TitleExtract>Movimentações</Styled.TitleExtract>
           <Styled.NewExtract onPress={() => setOpenFilter(!openFilter)}>
-            <IconFilter />
+            <IconFilter width={20} />
+            <Styled.TitleBtnExtract>Filtrar</Styled.TitleBtnExtract>
           </Styled.NewExtract>
-
+          {/* 
           <Styled.NewExtract onPress={() => navigation.navigate('RegisterExtract')}>
             <Adicionar />
-          </Styled.NewExtract>
+          </Styled.NewExtract> */}
         </Styled.BoxNewExtract>
+        <View>
+          {openFilter && (
+            <>
+              <View>
 
-        {openFilter && (
-          <>
-            <CategoriasFilter
-              filtroCategoria={filtroCategoria}
-              setFiltroCategoria={setFiltroCategoria}
-            />
-          </>
-        )}
+                <CategoriasFilter
+                  filtroCategoria={filtroCategoria}
+                  setFiltroCategoria={setFiltroCategoria}
+                />
+              </View>
+
+
+              <View>
+
+                <CardFilter
+                  filterCard={filterCard}
+                  setFilterCard={setFilterCard}
+                />
+              </View>
+            </>
+          )}
+        </View>
+
 
         <Styled.View>
           <ListHistorico data={dataTransactions} nameFilter={filtroCategoria} />

@@ -10,6 +10,7 @@ import IconAlimentacao from '../../assets/icons/utensils.svg';
 import IconBebida from '../../assets/icons/wine.svg';
 import IconSaude from '../../assets/icons/saude.svg';
 import Alert from '../../assets/icons/exclamation.svg';
+import Hotel from '../../assets/icons/building.svg'
 
 type Props = {
   data: TransactionsCard;
@@ -21,6 +22,10 @@ export default function Historico({ data }: Props) {
 
   const iconBuy = (data: { category: string }) => {
     switch (data?.category) {
+      case 'Supermercado': {
+        return <IconMercado />;
+      }
+
       case 'Mercado': {
         return <IconMercado />;
       }
@@ -42,6 +47,11 @@ export default function Historico({ data }: Props) {
 
       case 'Saúde': {
         return <IconSaude />;
+      }
+
+
+      case 'Viagens': {
+        return <Hotel />;
       }
 
 
@@ -71,9 +81,6 @@ export default function Historico({ data }: Props) {
           <Styled.Price>{formatToBRL(-data?.value)}</Styled.Price>
           <Styled.Date>{data?.date}</Styled.Date>
         </Styled.BoxText>
-
-
-
       </Styled.ContentItens>
     </>
   );

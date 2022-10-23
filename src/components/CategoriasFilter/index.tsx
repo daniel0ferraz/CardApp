@@ -1,12 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import {
-  Text,
-  View
-} from 'react-native';
+
 import { useTheme } from 'styled-components';
 
 import { CategoryMock } from "../../screens/Home/data"
+import Categorias from '../../assets/icons/categoria.svg'
 import * as Styled from './styles'
 
 type ICategorias = typeof CategoryMock[0]
@@ -16,6 +14,8 @@ export type Props = {
 }
 
 export default function CategoriasFilter({ filtroCategoria, setFiltroCategoria }: Props) {
+
+  const [open, setOpen] = useState(false);
 
   const colors = useTheme()
 
@@ -27,19 +27,28 @@ export default function CategoriasFilter({ filtroCategoria, setFiltroCategoria }
   }
   return (
     <>
+      <Styled.BoxFilter>
 
-      <Styled.Category>
-        {CategoryMock.map((opcao) => (
-          <Styled.BoxCategory
-            style={{ backgroundColor: filtroCategoria === opcao.name ? colors.colors.orange : colors.colors.gray }}
-            key={opcao.id}
-            onPress={() => selectFilter(opcao)}
-          >
-            <Styled.TextCategory >{opcao.name}</Styled.TextCategory>
-          </Styled.BoxCategory>
-        ))}
-      </Styled.Category>
 
+        <Styled.NewExtract onPress={() => setOpen(!open)}>
+          <Categorias width={22} height={20} />
+          <Styled.TitleBtnExtract>Categoria</Styled.TitleBtnExtract>
+        </Styled.NewExtract>
+
+        {open && (
+          <Styled.Category>
+            {CategoryMock.map((opcao) => (
+              <Styled.BoxCategory
+                style={{ backgroundColor: filtroCategoria === opcao.name ? '#3C3C3C' : colors.colors.red }}
+                key={opcao.id}
+                onPress={() => selectFilter(opcao)}
+              >
+                <Styled.TextCategory >{opcao.name}</Styled.TextCategory>
+              </Styled.BoxCategory>
+            ))}
+          </Styled.Category>
+        )}
+      </Styled.BoxFilter>
     </>
   );
 }

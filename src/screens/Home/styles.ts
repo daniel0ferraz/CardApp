@@ -66,11 +66,23 @@ export const TitleExtract = styled.Text`
 `;
 
 export const NewExtract = styled.TouchableOpacity`
-  width: 50px;
-  height: 50px;
-  border-radius: 20px;
-  align-items: center;
-  justify-content: center;
+  ${({theme}) => css`
+    flex-direction: row;
+    width: 120px;
+    height: 38px;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    background-color: ${theme.colors.light};
+  `}
+`;
+
+export const TitleBtnExtract = styled.Text`
+  ${({theme}) => css`
+    font-weight: 700;
+    font-size: 16px;
+    color: ${theme.colors.gray};
+  `}
 `;
 
 export const View = styled.View`

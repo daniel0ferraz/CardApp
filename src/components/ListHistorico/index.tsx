@@ -22,9 +22,11 @@ export default function ListHistorico({ data, nameFilter }: PropsHistoric) {
   return (
     <View>
       <FlatList
+        contentContainerStyle={{ flexGrow: 1 }}
         data={data}
         horizontal={false}
         showsVerticalScrollIndicator={false}
+        extraData={data}
         keyExtractor={(item: TransactionsCard) => String(item.id)}
         renderItem={({ item }) => (
           <Historico data={item} />

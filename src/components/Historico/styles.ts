@@ -3,7 +3,7 @@ import {ms} from 'react-native-size-matters';
 
 export const ContentItens = styled.View`
   ${({theme}) => css`
-    flex: 1;
+    /* flex: 1; */
     flex-direction: row;
     justify-content: space-between;
     background: ${theme.colors.white};

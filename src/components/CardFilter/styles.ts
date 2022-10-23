@@ -44,7 +44,7 @@ export const TitleBtnExtract = styled.Text`
 export const Category = styled.View`
   align-items: center;
   justify-content: space-between;
-  flex-direction: row;
+  /* flex-direction: row; */
   flex-wrap: wrap;
 `;
 

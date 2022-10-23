@@ -80,108 +80,100 @@
   ],
   "transactionsCards": [
     {
-      "name": "Teste",
+      "id": 1,
+      "name": "Mercado Oliveira ",
+      "category": "Mercado",
+      "value": 47.5,
+      "date": "01/05/2022",
+      "card_id": 1
+    },
+    {
+      "id": 2,
+      "name": "Supermecado Gabriele",
+      "category": "Mercado",
+      "value": 47.5,
+      "date": "15/10/2022",
+      "card_id": 3
+    },
+    {
+      "id": 3,
+      "name": "Restaurante Vovó Bela",
       "category": "Alimentação",
-      "value": "20.00",
-      "date": "22/10/2022",
-      "card_id": 3,
-      "id": 1
+      "value": 47.5,
+      "date": "21/05/2022",
+      "card_id": 4
     },
     {
-      "name": "Teste 2",
-      "category": "Bebidas",
-      "value": "100.50",
-      "date": "22/10/2022",
-      "card_id": 1,
-      "id": 2
-    },
-    {
-      "name": "teste ",
-      "category": "Saúde",
-      "value": "1000",
-      "date": "20/10/2022",
-      "card_id": 5,
-      "id": 3
-    },
-    {
-      "name": "Testeq",
+      "id": 4,
+      "name": "Jô Fashion",
       "category": "Roupas",
-      "value": 0,
-      "date": "10/10/2022",
-      "card_id": 2,
-      "id": 4
+      "value": 47.5,
+      "date": "16/10/2022",
+      "card_id": 6
     },
     {
-      "name": "Reste",
-      "category": "Supermecado",
-      "value": 0,
-      "date": "21/10/2022",
-      "card_id": 5,
-      "id": 5
+      "id": 5,
+      "name": "Mercearia El Shaday",
+      "category": "Roupas",
+      "value": 47.5,
+      "date": "17/10/2022",
+      "card_id": 6
     },
     {
-      "name": "teste",
-      "category": "Alimentação",
-      "value": 500,
-      "date": "10/10/2022",
-      "card_id": 1,
-      "id": 6
+      "id": 6,
+      "name": "Farmacia Santa Maria",
+      "category": "Saúde",
+      "value": 28,
+      "date": "17/10/2022",
+      "card_id": 6
     },
     {
-      "name": "teste",
+      "id": 7,
+      "name": "Cervejas Bar",
       "category": "Bebidas",
-      "value": 40,
-      "date": "07/10/2022",
-      "card_id": 3,
-      "id": 7
+      "value": 47.5,
+      "date": "17/10/2022",
+      "card_id": 6
     },
     {
-      "name": "teste FFF",
-      "category": "Alimentação",
-      "value": "28.80",
-      "date": "01/10/2022",
-      "card_id": 2,
-      "id": 8
+      "id": 8,
+      "name": "Bar meia noite",
+      "category": "Bebidas",
+      "value": 47.5,
+      "date": "17/10/2022",
+      "card_id": 6
     },
     {
-      "name": "afdfa",
-      "category": "Estética",
-      "value": 2000,
-      "date": "10/05/2022",
-      "card_id": 4,
+      "name": "Hotel Milla",
+      "category": "Viagens",
+      "value": 260.89,
+      "date": "01/02/2022",
+      "card_id": 5,
       "id": 9
     },
     {
-      "name": "DD",
-      "category": "Saúde",
-      "value": 252,
-      "date": "19/02/2022",
-      "card_id": 5,
+      "name": "Hotel Chauan",
+      "category": "Viagens",
+      "value": 260.89,
+      "date": "23/08/2021",
+      "card_id": 1,
       "id": 10
     },
     {
-      "name": "Daniel ",
+      "name": "Hotel porto belo",
       "category": "Viagens",
-      "value": 200,
-      "date": "05/05/2022",
-      "card_id": 4,
+      "value": 471.89,
+      "date": "23/09/2022",
+      "card_id": 3,
       "id": 11
     },
     {
       "name": "teste",
-      "category": "Saúde",
-      "value": "20",
-      "date": "22/10/2022",
+      "category": "Viagens",
+      "value": "2222.00",
+      "date": "22/22/2222",
       "card_id": 4,
       "id": 12
-    },
-    {
-      "name": "teste",
-      "category": "Viagens",
-      "value": "2069.00",
-      "date": "20/10/2022",
-      "card_id": 5,
-      "id": 13
     }
   ]
 }
