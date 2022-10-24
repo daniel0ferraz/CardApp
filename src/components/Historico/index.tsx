@@ -11,6 +11,7 @@ import IconBebida from '../../assets/icons/wine.svg';
 import IconSaude from '../../assets/icons/saude.svg';
 import Alert from '../../assets/icons/exclamation.svg';
 import Hotel from '../../assets/icons/building.svg'
+import IconServicos from '../../assets/icons/tools.svg';
 
 type Props = {
   data: TransactionsCard;
@@ -52,6 +53,10 @@ export default function Historico({ data }: Props) {
 
       case 'Viagens': {
         return <Hotel />;
+      }
+
+      case 'Assinatura e serviços': {
+        return <IconServicos />
       }
 
 

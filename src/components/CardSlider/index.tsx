@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
 /* eslint-disable react-native/no-inline-styles */
-import { Dimensions, FlatList, View, Text, ProgressBarAndroidBase } from 'react-native';
+import { Dimensions, FlatList, View, Text, ProgressBarAndroidBase, TouchableOpacity } from 'react-native';
 import { formatToBRL } from 'brazilian-values';
 import { Card } from '../../@types/Card';
 import * as Progress from 'react-native-progress';
@@ -16,6 +16,10 @@ import IconPicPay from '../../assets/cards/icon-picpay.svg';
 // Logo brands
 import IconMastercard from '../../assets/brands/mastercard.svg';
 import IconVisa from '../../assets/brands/visa.svg'
+//
+import ArrowRigth from '../../assets/icons/arrow-right2.svg';
+import { useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 
 type PropsCardlider = {
@@ -26,7 +30,7 @@ type PropsCardlider = {
 const { width } = Dimensions.get('window');
 
 export default function CardSlider({ data }: PropsCardlider) {
-
+  const navigation = useNavigation<NativeStackNavigationProp<any>>();
 
   const iconCard = (data: { name: string }) => {
     switch (data.name) {
@@ -113,12 +117,20 @@ export default function CardSlider({ data }: PropsCardlider) {
                 </View>
               </Styled.CardHeader>
 
-              <Styled.CardInfo>
-                <Styled.Fature>Fatura atual</Styled.Fature>
-                <Styled.ValueFature>
-                  {formatToBRL(item?.credito) || 0}
-                </Styled.ValueFature>
-              </Styled.CardInfo>
+              <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+                <Styled.CardInfo>
+                  <Styled.Fature>Fatura atual</Styled.Fature>
+                  <Styled.ValueFature>
+                    {formatToBRL(item?.credito) || 0}
+                  </Styled.ValueFature>
+                </Styled.CardInfo>
+
+                <View>
+                  <TouchableOpacity onPress={() => navigation.navigate('ExtractCard', { item })}>
+                    <ArrowRigth width={25} height={25} />
+                  </TouchableOpacity>
+                </View>
+              </View>
 
               <View style={{ marginTop: 20 }}>
                 <Styled.CardInfoLimit>

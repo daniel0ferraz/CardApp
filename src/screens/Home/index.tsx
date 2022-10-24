@@ -23,7 +23,7 @@ import DateFilter from '../../components/DateFilter';
 
 
 export default function Home() {
-  const navigation = useNavigation<NativeStackNavigationProp<any>>();
+
 
   const [dataCard, setDataCard] = useState<Card[]>([]);
   const [dataTransactions, setDataTransactions] = useState<TransactionsCard[]>([]);
@@ -35,7 +35,7 @@ export default function Home() {
   const [filterCard, setFilterCard] = useState<number | null>(null);
 
   // Lista transações de cartoes
-  const listTransactionsCards = async () => {
+  const listCards = async () => {
     try {
       const response = await api.get('/cards');
       setDataCard(response.data)
@@ -48,12 +48,11 @@ export default function Home() {
   // Lista movimentações
   const lastMovimentations = async () => {
     try {
-      const response = await dataTransactionsMock;
+      const response = await api.get('/transactionsCards');
       if (!response) {
         return 'error';
       } else {
-        setDataTransactions(response)
-        return response;
+        setDataTransactions(response.data)
       }
     } catch (error: any) {
       console.log('error', error.message);
@@ -78,13 +77,13 @@ export default function Home() {
 
   useFocusEffect(
     useCallback(() => {
-      listTransactionsCards();
+      listCards();
       lastMovimentations();
     }, [])
   );
 
   // useEffect(() => {
-  //   listTransactionsCards();
+  //   listCards();
   //   lastMovimentations();
   // }, [])
 
@@ -93,7 +92,7 @@ export default function Home() {
     const filtraListaCartao = dataTransactionsMock.filter((item) => filtroCartao(item.card_id) && filtroCategoria(item.category))
     setDataTransactions(filtraListaCartao)
 
-
+    // lastMovimentations();
     setOpenFilter(false)
   }, [filterCard, filterCategory])
 
@@ -117,10 +116,7 @@ export default function Home() {
             <IconFilter width={20} />
             <Styled.TitleBtnExtract>Filtrar</Styled.TitleBtnExtract>
           </Styled.NewExtract>
-          {/* 
-          <Styled.NewExtract onPress={() => navigation.navigate('RegisterExtract')}>
-            <Adicionar />
-          </Styled.NewExtract> */}
+
         </Styled.BoxNewExtract>
         <View>
           {openFilter && (

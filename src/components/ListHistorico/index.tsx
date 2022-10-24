@@ -2,6 +2,7 @@ import React from 'react';
 import {
   FlatList,
   Text,
+  TouchableOpacity,
   View
 } from 'react-native';
 import { TransactionsCard } from '../../@types/TransactionsCard';
@@ -29,7 +30,9 @@ export default function ListHistorico({ data, nameFilter }: PropsHistoric) {
         extraData={data}
         keyExtractor={(item: TransactionsCard) => String(item.id)}
         renderItem={({ item }) => (
+
           <Historico data={item} />
+
         )}
       />
 

@@ -12,6 +12,7 @@ export const CardName = styled.View``;
 export const CardBrand = styled.View``;
 
 export const CardInfo = styled.View`
+  flex-direction: column;
   padding-top: ${ms(20)}px;
 `;
 
