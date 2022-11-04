@@ -12,6 +12,7 @@ export default {
     red: '#FF6767',
     blue: '#5D9EFF',
     purple: '#A366FF',
+    green: '#6BC874',
   },
   sizes: {
     12: ms(12),

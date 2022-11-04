@@ -65,11 +65,8 @@ export default function ExtractCard() {
     lastMovimentations()
   }, [])
 
-
   return (
     <>
-
-
       <Styled.Container>
         <Styled.BoxGoback>
           <Styled.BtnGoback onPress={() => navigation.goBack()}>
@@ -79,7 +76,6 @@ export default function ExtractCard() {
         </Styled.BoxGoback>
 
         <Toast />
-
         <Styled.Card color={params.color}>
 
           <Styled.CardHeader>
@@ -91,9 +87,6 @@ export default function ExtractCard() {
             <Styled.Fature>Saldo</Styled.Fature>
             <Styled.ValueFature>{formatToBRL(params.debit)}</Styled.ValueFature>
           </Styled.CardSaldo>
-
-
-
 
           <Styled.CardInfoLimit>
             <View>
@@ -110,8 +103,8 @@ export default function ExtractCard() {
             <Styled.TitleExtract>Historico</Styled.TitleExtract>
 
             <Styled.NewExtract onPress={() => navigation.navigate('RegisterExtract')}>
-              <Adicionar />
-              <Styled.TitleBtnExtract>Novo</Styled.TitleBtnExtract>
+              <Adicionar width={22} />
+              <Styled.TitleBtnExtract>Adicionar</Styled.TitleBtnExtract>
             </Styled.NewExtract>
           </Styled.BoxNewExtract>
 

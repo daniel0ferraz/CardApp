@@ -1,6 +1,6 @@
 import styled, {css} from 'styled-components/native';
 import {Dimensions} from 'react-native';
-import {ms} from 'react-native-size-matters';
+import {ms, s} from 'react-native-size-matters';
 
 const {height} = Dimensions.get('window');
 
@@ -37,6 +37,49 @@ export const Subtitle = styled.Text`
 
 export const BoxCards = styled.View`
   padding-bottom: 15px;
+`;
+
+export const InfoExpenses = styled.View`
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+
+  align-items: center;
+  padding: 15px;
+  margin-bottom: ${ms(6)};
+`;
+
+export const BoxInfo = styled.View`
+  ${({theme}) => css`
+    background: ${theme.colors.white};
+    width: ${ms(160)}px
+    border-radius: 8px;
+    height: ${ms(89)};
+    padding: 15px;
+  `}
+`;
+
+export const BoxIcon = styled.View`
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const TextBoxIcon = styled.Text`
+  ${({theme}) => css`
+    font-weight: 400;
+    font-size: 16px;
+    color: ${theme.colors.gray2};
+  `}
+`;
+
+export const TextInfo = styled.Text`
+  ${({theme}) => css`
+    font-weight: 600;
+    font-size: 18px;
+    color: ${theme.colors.gray2};
+    margin-top: ${ms(15)};
+  `}
 `;
 
 export const Content = styled.View`

@@ -123,7 +123,7 @@
       "id": 6,
       "name": "Farmacia Santa Maria",
       "category": "Saúde",
-      "value": 28.0,
+      "value": 28,
       "date": "17/10/2022",
       "card_id": 6
     },
@@ -191,7 +191,6 @@
       "card_id": 1,
       "id": 15
     },
-
     {
       "name": "Minas Calçados",
       "category": "Roupas",
@@ -200,7 +199,6 @@
       "card_id": 5,
       "id": 16
     },
-
     {
       "name": "Minato restaurante",
       "category": "Alimentação",
@@ -220,7 +218,7 @@
     {
       "name": "Àgua mineral",
       "category": "Supermercado",
-      "value": 11.0,
+      "value": 11,
       "date": "21/10/2022",
       "card_id": 1,
       "id": 19
@@ -253,7 +251,7 @@
       "id": 23,
       "name": "Àgua mineral",
       "category": "Supermercado",
-      "value": 11.0,
+      "value": 11,
       "date": "21/10/2022",
       "card_id": 1
     },
@@ -269,9 +267,49 @@
       "id": 25,
       "name": "Mercado bezinho",
       "category": "Supermercado",
-      "value": 20.0,
+      "value": 20,
       "date": "15/10/2022",
       "card_id": 1
+    },
+    {
+      "name": "Teste",
+      "category": "Bebidas",
+      "value": 20,
+      "date": "25/10/2022",
+      "card_id": 3,
+      "id": 26
+    },
+    {
+      "name": "Bar da lia ",
+      "category": "Bebidas",
+      "value": 1000,
+      "date": "24/10/2022",
+      "card_id": 3,
+      "id": 27
+    },
+    {
+      "name": "Atacadão ",
+      "category": "Supermercado",
+      "value": 39563,
+      "date": "25/05/2022",
+      "card_id": 2,
+      "id": 28
+    },
+    {
+      "name": "Supermercado Oliveira ",
+      "category": "Bebidas",
+      "value": 30,
+      "date": "29/10/2022",
+      "card_id": 1,
+      "id": 29
+    },
+    {
+      "name": "Mercado Oliveira",
+      "category": "Supermercado",
+      "value": 899,
+      "date": "03/11/2022",
+      "card_id": 1,
+      "id": 30
     }
   ]
 }

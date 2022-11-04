@@ -1,7 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 
-import IconFilter from '../../assets/icons/filter.svg';
-import Adicionar from '../../assets/icons/plus.svg';
+
 import * as Styled from './styles';
 
 import { Card } from '../../@types/Card';
@@ -15,16 +14,21 @@ import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { TouchableOpacity, Text, View } from 'react-native';
 import { Category } from '../../@types/Filter';
-import moment from 'moment';
+import { formatToBRL } from 'brazilian-values';
 import CategoriasFilter from '../../components/CategoriasFilter';
 import CardFilter from '../../components/CardFilter';
 import DateFilter from '../../components/DateFilter';
+// Icons
+import IconUSDGreen from '../../assets/icons/usd_green.svg';
+import IconUSDRed from '../../assets/icons/usd_red.svg';
+
+import IconFilter from '../../assets/icons/filter.svg';
+import Adicionar from '../../assets/icons/plus.svg';
+
 
 
 
 export default function Home() {
-
-
   const [dataCard, setDataCard] = useState<Card[]>([]);
   const [dataTransactions, setDataTransactions] = useState<TransactionsCard[]>([]);
 
@@ -69,6 +73,7 @@ export default function Home() {
 
   const filtroCartao = (id: number) => {
     if (filterCard !== null) {
+      lastMovimentations();
       return filterCard === id;
     }
     return true;
@@ -87,15 +92,43 @@ export default function Home() {
   //   lastMovimentations();
   // }, [])
 
+  // // useEffect(
+  // //   async(() => {
+
+  // //     const filtraListaCartao = dataTransactions.filter((item) => filtroCartao(item.card_id) && filtroCategoria(item.category))
+  // //     setDataTransactions(filtraListaCartao)
+
+  // //     console.log("filterCategory", filterCategory)
+  // //     console.log("FilterCard", filterCard)
+
+  // //     if (!filterCategory || filterCategory) {
+  // //       lastMovimentations();
+  // //     }
+  // //     console.log(filtraListaCartao.length)
+
+  // //     setOpenFilter(false)
+  // //   }, [filterCard, filterCategory]))
+
+
+
   useEffect(() => {
+    (async () => {
+      const filtraListaCartao = dataTransactions.filter((item) => {
 
-    const filtraListaCartao = dataTransactionsMock.filter((item) => filtroCartao(item.card_id) && filtroCategoria(item.category))
-    setDataTransactions(filtraListaCartao)
+        filtroCartao(item.card_id) && filtroCategoria(item.category)
 
-    // lastMovimentations();
-    setOpenFilter(false)
-  }, [filterCard, filterCategory])
+      })
+      setDataTransactions(filtraListaCartao)
+      setOpenFilter(false)
+    })();
+  }, [filterCard, filterCategory]);
 
+
+
+  let totalMoney = 3134.79
+
+  const gastos = totalMoney - sum;
+  console.log(gastos)
 
   return (
 
@@ -108,6 +141,26 @@ export default function Home() {
       <Styled.BoxCards>
         <CardSlider data={dataCard} />
       </Styled.BoxCards>
+
+
+      <Styled.InfoExpenses>
+
+        <Styled.BoxInfo>
+          <Styled.BoxIcon>
+            <IconUSDGreen width={25} height={25} />
+            <Styled.TextBoxIcon>Entradas</Styled.TextBoxIcon>
+          </Styled.BoxIcon>
+          <Styled.TextInfo>{formatToBRL(totalMoney)}</Styled.TextInfo>
+        </Styled.BoxInfo>
+
+        <Styled.BoxInfo>
+          <Styled.BoxIcon>
+            <IconUSDRed width={25} height={25} />
+            <Styled.TextBoxIcon>Despesa</Styled.TextBoxIcon>
+          </Styled.BoxIcon>
+          <Styled.TextInfo>{formatToBRL(gastos)}</Styled.TextInfo>
+        </Styled.BoxInfo>
+      </Styled.InfoExpenses>
 
       <Styled.Content>
         <Styled.BoxNewExtract>
@@ -134,10 +187,6 @@ export default function Home() {
                   setFilterCard={setFilterCard}
                 />
               </View>
-              <View>
-              </View>
-
-
             </>
           )}
         </View>

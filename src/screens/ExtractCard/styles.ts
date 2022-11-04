@@ -151,6 +151,7 @@ export const TitleBtnExtract = styled.Text`
     font-weight: 700;
     font-size: 16px;
     color: ${theme.colors.gray};
+    padding-left: 2px;
   `}
 `;
 

@@ -4,7 +4,7 @@ import Input from '../../components/Input';
 import { TransactionsCard } from '../../@types/TransactionsCard';
 import * as Styled from './styles';
 import Select from '../../components/Select';
-import { selectMock, CategoryMock, dataTransactionsMock } from '../Home/data';
+import { CategoryMock, cardsFilter } from '../Home/data';
 import { View, Text, Alert, TouchableOpacity } from 'react-native';
 //icones
 import IconLeft from '../../assets/icons/angle-left.svg'
@@ -14,10 +14,16 @@ import Money from '../../assets/icons/usd.svg'
 import Categorias from '../../assets/icons/categoria.svg'
 import Cartao from '../../assets/icons/card.svg';
 import IconGoback from '../../assets/icons/long-arrowleft.svg'
+import IconExtract from '../../assets/icons/receipt.svg'
+import IconX from '../../assets/icons/x.svg'
+//
+
+
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { api } from '../../services/api';
 import Date from '../../components/Input/Date';
+import { parseToNumber } from 'brazilian-values';
 
 export default function RegisterExtract() {
 
@@ -43,7 +49,7 @@ export default function RegisterExtract() {
       const response = await api.post('/transactionsCards', {
         name: extract.name,
         category: extract.category,
-        value: parseInt(extract.value).toFixed(2),
+        value: parseToNumber(extract.value),
         date: extract.date,
         card_id: extract.card_id
       })
@@ -75,8 +81,18 @@ export default function RegisterExtract() {
 
       <Styled.Content>
         <Styled.ButtonsContainer>
+
+          <Styled.BoxHeader>
+            <Styled.Box>
+              <IconExtract width={25} />
+            </Styled.Box>
+            <View>
+              <Styled.TitleHeader>Novo Gasto</Styled.TitleHeader>
+            </View>
+          </Styled.BoxHeader>
+
           <TouchableOpacity onPress={() => navigation.goBack()}>
-            <IconGoback width={30} height={30} />
+            <IconX width={25} height={25} />
           </TouchableOpacity>
         </Styled.ButtonsContainer>
 
@@ -86,14 +102,13 @@ export default function RegisterExtract() {
           onChangeText={text => {
             setExtract({ ...extract, name: text });
           }}
-          icon={<IconLoja width={23} height={25} />}
+          // icon={<IconLoja width={23} height={25} />}
           keyboardType='default'
           autoCapitalize='none'
         />
 
 
         <Input
-
           placeholder='Valor da compra'
           value={String(extract.value)}
           onChangeText={(text) => {
@@ -108,7 +123,7 @@ export default function RegisterExtract() {
         <Styled.Space>
           <Select
             text='Cartão'
-            options={selectMock}
+            options={cardsFilter}
             onChangeSelect={(id, name) => {
               setExtract({ ...extract, card_id: id });
             }}

@@ -2,7 +2,7 @@ import styled, {css} from 'styled-components/native';
 
 export const Container = styled.View`
   ${({theme}) => css`
-    /* flex: 1; */
+    flex: 1;
     width: 100%;
     /* padding: 15px; */
     /* align-items: center; */
@@ -40,8 +40,35 @@ export const Content = styled.View`
 
 export const ButtonsContainer = styled.View`
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-between;
+  align-items: center;
   padding-bottom: 20px;
+`;
+
+export const BoxHeader = styled.View`
+  flex-direction: row;
+  align-items: center;
+`;
+
+export const TitleHeader = styled.Text`
+  ${({theme}) => css`
+    color: ${theme.colors.gray2};
+    font-weight: 700;
+    font-size: 18px;
+    padding-left: 15px;
+  `}
+`;
+
+export const Box = styled.View`
+  ${({theme}) => css`
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: ${theme.colors.light};
+    border-radius: 50px;
+  `}
 `;
 
 export const RowItens = styled.View`
@@ -60,7 +87,7 @@ export const Button = styled.TouchableOpacity`
   ${({theme}) => css`
     margin-top: 30px;
     width: 100%;
-    height: 60px;
+    height: 48px;
     border-radius: 8px;
     align-items: center;
     justify-content: center;
